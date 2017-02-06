@@ -85,9 +85,9 @@ trait DecisionControllerFinalCsvSpec extends DecisionControllerCsvSpec {
 }
 
 trait DecisionControllerClusterCsvSpec extends DecisionControllerFinalCsvSpec {
-  val clusterName:String
+  val clusterNames:List[String]
   override def verifyDecision(expectedResult: String, decisionResponse: DecisionResponse): Unit = {
-    val maybeClusterResult = decisionResponse.score.get(clusterName)
+    val maybeClusterResult = clusterNames.flatMap(decisionResponse.score.get(_)).headOption
     maybeClusterResult.isDefined shouldBe true
     maybeClusterResult.map(_.toLowerCase) shouldBe Some(expectedResult.toLowerCase)
   }

@@ -19,12 +19,12 @@ package uk.gov.hmrc.decisionservice.controllers
 import uk.gov.hmrc.play.test.{UnitSpec, WithFakeApplication}
 
 class ControlAggregatedCsvSpec extends UnitSpec with WithFakeApplication with DecisionControllerClusterCsvSpec {
-  val clusterName = "control"
+  val clusterNames = List("control", "workPatternImpact")
   val CONTROL_SCENARIOS = "/test-scenarios/single/control/scenarios.csv"
 
   "POST /decide" should {
     "return 200 and correct response with the expected decisions for control scenarios" in {
-//      createMultipleRequestsSendVerifyDecision(CONTROL_SCENARIOS)
+      createMultipleRequestsSendVerifyDecision(CONTROL_SCENARIOS)
     }
   }
 }

@@ -19,7 +19,7 @@ package uk.gov.hmrc.decisionservice.controllers
 import uk.gov.hmrc.play.test.{UnitSpec, WithFakeApplication}
 
 class ControlCsvSpec extends UnitSpec with WithFakeApplication with DecisionControllerClusterCsvSpec {
-  val clusterName = "control"
+  val clusterNames = List("control", "workPatternImpact")
   val CONTROL_SCENARIO_0 = "/test-scenarios/single/control/scenario-should-give-MEDIUM-0.csv"
   val CONTROL_SCENARIO_1 = "/test-scenarios/single/control/scenario-should-give-MEDIUM-1.csv"
   val CONTROL_SCENARIO_2 = "/test-scenarios/single/control/scenario-should-give-HIGH.csv"

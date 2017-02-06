@@ -19,7 +19,7 @@ package uk.gov.hmrc.decisionservice.controllers
 import uk.gov.hmrc.play.test.{UnitSpec, WithFakeApplication}
 
 class BusinessStructureCsvSpec extends UnitSpec with WithFakeApplication with DecisionControllerClusterCsvSpec {
-  val clusterName = "businessStructure"
+  val clusterNames = List("businessStructure")
   val BUSINESS_STRUCTURE_SCENARIO_LOW_0 = "/test-scenarios/single/business-structure/scenario-should-give-LOW-0.csv"
   val BUSINESS_STRUCTURE_SCENARIO_HIGH_0 = "/test-scenarios/single/business-structure/scenario-should-give-HIGH-0.csv"
   val BUSINESS_STRUCTURE_SCENARIO_MEDIUM = "/test-scenarios/single/business-structure/scenario-should-give-MEDIUM.csv"
